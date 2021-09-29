@@ -1,10 +1,11 @@
 header {
     background-color: #e3e3e3;
+    padding: 10px 20px;
 }
 
 .container {
-    padding: 10px 20px;
     display: grid;
+    margin-bottom: 10px;
     grid-template-columns: 1fr 2fr 1fr;
 
     div {
@@ -45,6 +46,11 @@ header {
                     span {
                         pointer-events: none;
                     }
+
+                    &.active {
+                        color: #fff;
+                        background-color: #15E90E;
+                    }
                 }
 
                 &:hover {
@@ -78,5 +84,28 @@ header {
     img {
         width: 80px;
         margin: 0 15px;
+    }
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    p {
+        margin: 0 10px;
+    }
+
+    a {
+        color: #15E90E;
+        margin: 0 10px;
+    }
+
+    input {
+        border: none;
+        outline: none;
+        font-size: 16px;
+        padding: 2px 4px;
     }
 }

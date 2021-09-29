@@ -5,7 +5,7 @@
             <a href="#"><img class="main-logo" src="../../../assets/youtube.png"></a>
             <input type="text">
             <button type="submit">Search</button>
-            <button class="settings">
+            <button [ngClass]="{active: settingsOpened}" (click)="openSettings()" class="settings">
                 <span class="material-icons">tune</span>
             </button>
         </div>
@@ -15,5 +15,12 @@
                 <span class="material-icons">account_circle</span>
             </div>
         </div>
+    </div>
+    <div *ngIf="settingsOpened" class="filter-container">
+        <p>Sorting by:</p>
+        <a href="">date</a>
+        <a href="">count of views</a>
+        <p>by word or sentence</p>
+        <input type="text">
     </div>
 </header>
