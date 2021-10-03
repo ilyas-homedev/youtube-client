@@ -1,8 +1,8 @@
 .container {
-    max-width: 300px;
+    width: 300px;
     height: 400px;
     background-color: #e3e3e3;
-    border-bottom: 5px solid green;
+    border-bottom: 5px solid #e3e3e3;
     border-radius: 10px;
     padding: 10px 0;
     box-sizing: border-box;
@@ -13,8 +13,9 @@
         height: 50%;
 
         img {
+            max-width: 100%;
             max-height: 100%;
-            width: auto;
+            height: auto;
             display: block;
             margin: 0 auto;
         }
@@ -39,7 +40,7 @@
     
                 span {
                     font-size: 32px;
-                    color: #3b3b3b;
+                    color: var(--dark-color);
                 }
             }
     
@@ -53,12 +54,12 @@
         height: 25%;
         margin: 0 10px;
 
-        h2 {
+        h3 {
             margin: 0;
         }
     }
 
-    button {
+    .more {
         border: none;
         font-size: 16px;
         background-color: #ccc;
@@ -69,7 +70,9 @@
         margin: 0 auto;
         
         &:hover {
-            background-color: #15E90E;
+            background-color: var(--main-pink);
+            box-shadow: 0 0 5px var(--main-pink-with-opacity);
+            color: #fff;
         }
     }
 }

@@ -1,35 +1,35 @@
-<div class="container">
+<div class="container" [ngStyle]="{borderBottomColor : checkDate()}">
     <div class="image">
-        <img src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="">
+        <img src="{{ item.thumbnails.url }}" alt="">
     </div>
     <div class="marks">
         <div>
             <button>
                 <span class="material-icons">visibility</span>
             </button>
-            <p>1000</p>
+            <p>{{ item.statistics.viewCount }}</p>
         </div>
         <div>
             <button>
                 <span class="material-icons">favorite</span>
             </button>
-            <p>500</p>
+            <p>{{ item.statistics.likeCount }}</p>
         </div>
         <div>
             <button>
                 <span class="material-icons">thumb_down</span>
             </button>
-            <p>75</p>
+            <p>{{ item.statistics.dislikeCount }}</p>
         </div>
         <div>
             <button>
                 <span class="material-icons">chat_bubble</span>
             </button>
-            <p>40</p>
+            <p>{{ item.statistics.commentCount }}</p>
         </div>
     </div>
     <div class="title">
-        <h2>Lorem ipsum</h2>
+        <h3>{{ item.title }}</h3>
     </div>
-    <button>more...</button>
+    <button class="more">more...</button>
 </div>

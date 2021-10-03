@@ -2,25 +2,37 @@
     <div class="container">
         <div></div>
         <div class="search-bar">
-            <a href="#"><img class="main-logo" src="../../../assets/youtube.png"></a>
-            <input type="text">
-            <button type="submit">Search</button>
+            <a href="#"><img class="main-logo" src="../../../assets/youtube (2).png"></a>
+            <form action="">
+                <input type="text" #searchInput>
+                <button type="submit" (click)="handleValue(searchInput.value)">Search</button>
+            </form>
             <button [ngClass]="{active: settingsOpened}" (click)="openSettings()" class="settings">
                 <span class="material-icons">tune</span>
             </button>
         </div>
-        <div class="profile">
+        <div *ngIf="userIsLoggedIn; else login" class="profile">
             <p>User name</p>
-            <div class="profile-circle">
+            <div class="profile-circle" (mouseenter)="userInfoDisplayToggle()">
                 <span class="material-icons">account_circle</span>
             </div>
+            <div *ngIf="userInfoOpened" class="user-info-container" (mouseleave)="userInfoDisplayToggle()">
+                <app-user-info></app-user-info>
+            </div>
         </div>
+        <ng-template #login>
+            <div class="login">
+                <a href="" (click)="logIn($event)">Log in</a>
+            </div>
+        </ng-template>
     </div>
     <div *ngIf="settingsOpened" class="filter-container">
         <p>Sorting by:</p>
-        <a href="">date</a>
-        <a href="">count of views</a>
-        <p>by word or sentence</p>
-        <input type="text">
+        <button>date</button>
+        <button>count of views</button>
+        <form>
+            <p>by word or sentence</p>
+            <input type="text">
+        </form>
     </div>
 </header>

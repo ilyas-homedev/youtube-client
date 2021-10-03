@@ -15,14 +15,6 @@ header {
         &.search-bar {
             justify-content: center;
 
-            input {
-                width: 50%;
-                border: none;
-                font-size: 16px;
-                padding: 7px 5px;
-                outline: none;
-            }
-
             button {
                 height: 32px;
                 font-size: 14px;
@@ -49,19 +41,47 @@ header {
 
                     &.active {
                         color: #fff;
-                        background-color: #15E90E;
+                        background-color: var(--main-color);
                     }
                 }
 
                 &:hover {
                     color: #fff;
-                    background-color: #15E90E;
-                    box-shadow: 0 0 5px rgba(21, 233, 14, .7);
+                    background-color: var(--main-color);
+                    box-shadow: 0 0 5px var(--main-color-with-opacity);
+                }
+
+            }
+
+            form {
+                width: 70%;
+
+                input {
+                    width: 75%;
+                    border: none;
+                    font-size: 16px;
+                    padding: 7px 5px;
+                    outline: none;
+                }    
+            }
+        }
+
+        &.login {
+            justify-content: end;
+
+            a {
+                font-size: 18px;
+                color: var(--main-color);
+                margin-right: 30px;
+
+                &:hover {
+                    color: var(--main-color-with-opacity);
                 }
             }
         }
 
         &.profile {
+            position: relative;
             justify-content: end;
             padding: 0 10px;
 
@@ -70,13 +90,23 @@ header {
                 height: 50px;
                 margin: 10px;
                 border-radius: 50%;
-                background-color: #15E90E;
+                background-color: var(--main-color);
                 cursor: pointer;
 
                 span {
+                    pointer-events: none;
                     font-size: 50px;
                     color: #fff;
                 }
+            }
+
+            div.user-info-container {
+                position: absolute;
+                top: 65px;
+                right: 9px;
+                border: 1px solid #ccc;
+                background-color: #fff;
+                border-radius: 5px;
             }
         }
     }
@@ -97,15 +127,29 @@ header {
         margin: 0 10px;
     }
 
-    a {
-        color: #15E90E;
+    button {
+        padding: 0;
+        color: var(--main-color);
         margin: 0 10px;
+        font-size: 16px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--main-color-with-opacity);
+        }
     }
 
-    input {
-        border: none;
-        outline: none;
-        font-size: 16px;
-        padding: 2px 4px;
+    form {
+        display: flex;
+        
+        input {
+            border: none;
+            outline: none;
+            font-size: 16px;
+            padding: 2px 4px;
+        }
     }
 }
